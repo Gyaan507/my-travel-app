@@ -40,7 +40,7 @@ export const login = async (req, res) => {
 
       // if password incorrect 
       if (!checkCorrectPassword) {
-         return res.status(401).json({ susccess: false, message: "Incorrect email or password!" })
+         return res.status(401).json({ success: false, message: "Incorrect email or password!" })
       }
 
       const { password, role, ...rest } = user._doc
@@ -54,6 +54,6 @@ export const login = async (req, res) => {
          expires: token.expiresIn
       }).status(200).json({token, data:{...rest}, role})
    } catch (error) {
-      res.status(500).json({ susccess: false, message: "Failed to login" })
+      res.status(500).json({ success: false, message: "Failed to login" })
    }
 }
