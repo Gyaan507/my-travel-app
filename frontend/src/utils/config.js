@@ -1,1 +1,2 @@
-export const BASE_URL = 'https://my-travel-app-1-igda.onrender.com/';
+
+export const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:8000/api/v1';
